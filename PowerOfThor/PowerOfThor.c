@@ -1,3 +1,11 @@
+//
+//  PowerOfThor.c
+//  Codingame puzzle
+//
+//  Written by Thomas CARTON
+//
+
+
 static const char *kCompass[3][3] =
 {
 	{ "NW", "N", "NE" },
@@ -11,14 +19,14 @@ int main(int argc, char *argv[])
 	int tx, ty; // Thor's starting position
 	scanf("%d%d%d%d", &lx, &ly, &tx, &ty);
 
-    int remainingTurns;
+	int remainingTurns;
 		
-    do
+	do
 	{
 		scanf("%d", &remainingTurns);
 
 		int cx = lx == tx ? 1 : lx - tx & 0x8000 ? 0 : 2;
-        int cy = ly == ty ? 1 : ly - ty & 0x8000 ? 0 : 2;
+		int cy = ly == ty ? 1 : ly - ty & 0x8000 ? 0 : 2;
 
 		printf("%s\n", kCompass[cy][cx]);
 
@@ -29,4 +37,3 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
